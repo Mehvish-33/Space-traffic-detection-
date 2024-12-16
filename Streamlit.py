@@ -1,4 +1,3 @@
-pip install scikit-learn
 from sklearn.preprocessing import LabelEncoder
 
 # Load the Dataset
