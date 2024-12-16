@@ -32,5 +32,5 @@ It provides an **interactive web application** using **Streamlit**, allowing use
 ### 1. Clone the Repository 📂
 
 ```bash
-git clone https://github.com/your-username/Space-Traffic-Detection.git
+git clone https://github.com/SharvaniDhulipala-DS/Space-Traffic-Detection.git
 cd Space-Traffic-Detection
