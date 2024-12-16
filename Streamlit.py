@@ -1,4 +1,9 @@
-from sklearn.preprocessing import LabelEncoder
+import pandas as pd
+import streamlit as st
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import Ridge
+from sklearn.preprocessing import LabelEncoder  # <-- Add this line
+
 
 # Load the Dataset
 file_path = 'processed_space_traffic.csv'
@@ -58,3 +63,4 @@ input_data = pd.DataFrame({
 if st.button("Predict Traffic Density"):
     prediction = ridge_model.predict(input_data)
     st.write(f"Predicted Traffic Density: {prediction[0]:.2f}")
+
