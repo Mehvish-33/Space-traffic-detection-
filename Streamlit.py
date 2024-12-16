@@ -5,8 +5,7 @@ from sklearn.linear_model import Ridge
 from sklearn.preprocessing import LabelEncoder 
 
 
-# Load the Dataset
-file_path = 'processed_space_traffic.csv'
+file_path = './processed_space_traffic.csv'
 data = pd.read_csv(file_path)
 
 # Encode the Traffic_Density_Category column
