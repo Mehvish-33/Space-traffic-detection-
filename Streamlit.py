@@ -106,8 +106,4 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Footer
-st.markdown("""
----
-Built with ❤️ by Sharvani
-""")
+
