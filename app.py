@@ -3,10 +3,15 @@ import pandas as pd
 import pickle
 import numpy as np
 
-# Load pre-trained model (Ensure that you have trained your model and saved it as .pkl file)
-# You can load the model using pickle
-with open('traffic_model.pkl', 'rb') as file:
-    dt_model = pickle.load(file)
+# Load pre-trained models
+with open('dt_model.pkl', 'rb') as f:
+    dt_model = pickle.load(f)
+
+with open('svm_model.pkl', 'rb') as f:
+    svm_model = pickle.load(f)
+
+with open('rf_model.pkl', 'rb') as f:
+    rf_model = pickle.load(f)
 
 # Define the columns in the model for input data, these should match your training data
 columns = [
@@ -57,6 +62,7 @@ input_data = input_data[columns]
 # Make prediction for Traffic Density (Regression)
 if st.button("Predict Traffic Density"):
     try:
+        # Use Decision Tree model for regression
         traffic_density_prediction = dt_model.predict(input_data)
         st.write(f"Predicted Traffic Density: {traffic_density_prediction[0]:.2f}")
     except Exception as e:
@@ -65,7 +71,8 @@ if st.button("Predict Traffic Density"):
 # Make prediction for Traffic Density Category (Classification)
 if st.button("Predict Traffic Density Category"):
     try:
-        category_prediction = dt_model.predict(input_data)
+        # Use SVM or RandomForest model for classification
+        category_prediction = svm_model.predict(input_data)  # or use rf_model
         st.write(f"Predicted Traffic Density Category: {category_prediction[0]}")
     except Exception as e:
         st.write(f"Error: {e}")
