@@ -57,6 +57,6 @@ if st.button("Predict Traffic Density"):
     
     # Displaying a bar chart for model comparison
     st.subheader("Model Comparison")
-    predictions = dt_prediction[0], svm_prediction[0], rf_prediction[0]]
+    predictions = dt_prediction[0], svm_prediction[0], rf_prediction[0]
     models = ['Decision Tree', 'SVM', 'Random Forest']
     st.bar_chart(pd.DataFrame({'Model': models, 'Prediction': predictions}))
