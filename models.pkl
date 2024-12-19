@@ -1,16 +1,15 @@
-import pickle
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.linear_model import Ridge
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.svm import SVR
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.preprocessing import LabelEncoder
+import pickle
 
-# Load the dataset (replace with your actual dataset path)
-data = pd.read_csv('processed_space_traffic.csv')  # Make sure to replace this with your dataset
+# Load dataset
+data = pd.read_csv('processed_space_traffic.csv')  # Replace with your actual dataset
 
-# Encode Traffic Density Category
+# Encode Traffic Density Category (if necessary)
 label_encoder = LabelEncoder()
 data['Traffic_Density_Category'] = label_encoder.fit_transform(data['Traffic_Density_Category'])
 
@@ -21,15 +20,19 @@ y = data['Traffic_Density']
 # Train-Test Split (80-20)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-dt_model = DecisionTreeRegressor()
+# 1. Train Decision Tree Model
+dt_model = DecisionTreeRegressor(random_state=42)
 dt_model.fit(X_train, y_train)
 
+# 2. Train SVM Model
 svm_model = SVR()
 svm_model.fit(X_train, y_train)
 
-rf_model = RandomForestRegressor()
+# 3. Train Random Forest Model
+rf_model = RandomForestRegressor(random_state=42)
 rf_model.fit(X_train, y_train)
 
+# Save models as .pkl files
 with open('dt_model.pkl', 'wb') as f:
     pickle.dump(dt_model, f)
 
@@ -39,4 +42,4 @@ with open('svm_model.pkl', 'wb') as f:
 with open('rf_model.pkl', 'wb') as f:
     pickle.dump(rf_model, f)
 
-print("Models saved successfully.")
+print("Models have been trained and saved successfully.")
