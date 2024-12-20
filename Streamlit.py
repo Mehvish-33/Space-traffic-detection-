@@ -31,7 +31,7 @@ st.markdown(
 
 
 # Raw GitHub URL for the default dataset
-dataset_url = "https://raw.githubusercontent.com/SharvaniDhulipala-DS/Space-Traffic-Detection-/main/Regression_Model/processed_space_traffic.csv"
+dataset_url = "https://raw.githubusercontent.com/SharvaniDhulipala-DS/Space-Traffic-Detection/main/processed_space_traffic.csv"
 
 # Ask if the user wants to upload a custom dataset or use the default one
 st.subheader("Do you want to upload a custom dataset? 🤔")
