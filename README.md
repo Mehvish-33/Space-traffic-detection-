@@ -32,7 +32,7 @@ It provides an **interactive web application** using **Streamlit**, allowing use
 ### 1. Clone the Repository 📂
 
 ```bash
-git clone https://github.com/SharvaniDhulipala-DS/Space-Traffic-Detection.git
+git clone[ https://github.com/Mehvish-33/Space-traffic-detection-.git]
 cd Space-Traffic-Detection
 ```
 ## 2. Install Dependencies 📦
